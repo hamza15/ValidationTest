@@ -12,22 +12,27 @@ jobs:
     steps:
       - checkout
       - run: echo "Hello World"
-  Test:
+  inputNode:
     docker:
       - image: circleci/ruby:2.4-node
     steps:
       - checkout
       - run: echo "Hello World"
-  Deploy:
+  test:
+    docker:
+      - image: circleci/ruby:2.4-node
+    steps:
+      - checkout
+      - run: echo "Hello World"
+  outputNode:
     docker:
       - image: circleci/ruby:2.4-node
     steps:
       - checkout
       - run: echo "Hello World"
 workflows:
-  BuildTestDeploy:
+  buildtestdeploy:
     jobs:
       - Build
       - Build2
-      - Test
-      - Deploy
+      - inputNode
