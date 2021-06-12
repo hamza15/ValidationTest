@@ -6,7 +6,28 @@ jobs:
     steps:
       - checkout
       - run: echo "Hello World"
-workflows:
+  Build2:
+    docker:
+      - image: circleci/ruby:2.4-node
+    steps:
+      - checkout
+      - run: echo "Hello World"
+  Deploy:
+    docker:
+      - image: circleci/ruby:2.4-node
+    steps:
+      - checkout
+      - run: echo "Hello World"
   Test:
+    docker:
+      - image: circleci/ruby:2.4-node
+    steps:
+      - checkout
+      - run: echo "Hello World"
+workflows:
+  BuildTestDeploy:
     jobs:
       - Build
+      - Build2
+      - Deploy
+      - Test
