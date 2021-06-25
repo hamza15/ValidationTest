@@ -5,7 +5,7 @@ jobs:
     resource_class: hamza-runner-ns/hamza-rc
     steps:
       - checkout
-      - run: echo "Hello World"
+      - run: echo "Hi World"
 workflows:
   BuildTestDeploy:
     jobs:
