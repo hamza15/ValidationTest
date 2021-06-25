@@ -11,7 +11,9 @@ jobs:
     machine: true
     resource_class: hamza-runner-ns/hamza-rc
     steps:
-      - run: |
+      - run: 
+          name: Execute container commands
+          command: |
             echo "Pulling image"
             u="$USER"
             echo "User name $u"
