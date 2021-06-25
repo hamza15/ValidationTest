@@ -6,6 +6,19 @@ jobs:
     steps:
       - checkout
       - run: echo "Hi World"
+
+  Build2:
+    machine: true
+    resource_class: hamza-runner-ns/hamza-rc
+    steps:
+      - run: |
+            echo "Pulling image"
+            docker pull python
+            echo "Start container"
+            docker run -it python bash
+            echo "checkout code"
+            checkout
+            ls
 workflows:
   BuildTestDeploy:
     jobs:
