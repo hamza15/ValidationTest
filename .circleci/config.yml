@@ -14,12 +14,17 @@ jobs:
       - run: 
           name: Execute container commands
           command: |
-            echo "Pulling image"
-            u="$USER"
-            echo "User name $u"
-            docker pull python
-            echo "Start container"
-            docker run -d python echo "I'm inside the container!"
+#            echo "Pulling image"
+#            u="$USER"
+#            echo "User name $u"
+#            docker pull python
+#            echo "Start container"
+#            docker run -d python echo "I'm inside the container!"
+             checkout
+             docker build -t hamza/container .
+             docker run -p80:3000 hamza/container
+             docker ps -a
+
 
 workflows:
   BuildTestDeploy:
