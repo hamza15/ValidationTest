@@ -17,10 +17,9 @@ jobs:
             echo "User name $u"
             docker pull python
             echo "Start container"
-            docker run -it --user root python bash
-            echo "checkout code "
-            checkout
-            ls
+            docker run -d -name container python
+            docker exec -it container echo "I'm inside the container!"
+
 workflows:
   BuildTestDeploy:
     jobs:
