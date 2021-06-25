@@ -1,58 +1,12 @@
 version: "2.1"
 jobs:
   Build:
-    docker:
-      - image: circleci/ruby:2.4-node
-    steps:
-      - checkout
-      - run: echo "Hello World"
-  Build2:
-    docker:
-      - image: circleci/ruby:2.4-node
-    steps:
-      - checkout
-      - run: echo "Hello World"
-  Build3:
-    docker:
-      - image: circleci/ruby:2.4-node
-    steps:
-      - checkout
-      - run: echo "Hello World"
-  Test:
-    docker:
-      - image: circleci/ruby:2.4-node
-    steps:
-      - checkout
-      - run: echo "Hello World"
-  Test2:
-    docker:
-      - image: circleci/ruby:2.4-node
-    steps:
-      - checkout
-      - run: echo "Hello World"
-  Deploy:
-    docker:
-      - image: circleci/ruby:2.4-node
+    machine: true
+    resource_class: hamza-runner-ns/hamza-rc
     steps:
       - checkout
       - run: echo "Hello World"
 workflows:
-  Test:
+  BuildTestDeploy:
     jobs:
       - Build
-      - Build2
-      - Build3
-      - Test:
-          requires:
-            - Build
-            - Build2
-            - Build3
-      - Test2:
-          requires:
-            - Build3
-            - Build2
-            - Build
-      - Deploy:
-          requires:
-            - Test
-            - Test2
