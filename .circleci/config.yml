@@ -13,9 +13,11 @@ jobs:
     steps:
       - run: |
             echo "Pulling image"
+            u="$USER"
+            echo "User name $u"
             docker pull python
             echo "Start container"
-            docker run -it python bash
+            docker run -it --user root python bash
             echo "checkout code"
             checkout
             ls
