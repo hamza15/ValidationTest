@@ -18,7 +18,7 @@ jobs:
             docker pull python
             echo "Start container"
             docker run -it --user root python bash
-            echo "checkout code"
+            echo "checkout code "
             checkout
             ls
 workflows:
