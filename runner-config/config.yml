@@ -1,0 +1,27 @@
+version: "2.1"
+jobs:
+  Build:
+    machine: true
+    resource_class: hamza-runner-ns/hamza-rc
+    steps:
+      - checkout
+      - run: echo "Hi World"
+
+  Build2:
+    machine: true
+    resource_class: hamza-runner-ns/hamza-rc
+    steps:
+      - checkout
+      - run: 
+          name: Execute container commands
+          command: |
+             docker build -t hamza/container .
+             docker run -d -p 80:3000 hamza/container
+             docker ps -a
+
+
+workflows:
+  BuildTestDeploy:
+    jobs:
+      - Build
+      - Build2
