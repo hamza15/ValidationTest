@@ -1,0 +1,5 @@
+agents:
+  os: "macOS"
+
+steps:
+  - command: echo "Hello!"
