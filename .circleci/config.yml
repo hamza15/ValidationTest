@@ -129,6 +129,7 @@ jobs:
       - checkout
       - run: sleep 25
       - run: echo "Hello World"
+      - run: docker ps
       - fail_fast
   be_test_uWSGI_startup:
     docker:
