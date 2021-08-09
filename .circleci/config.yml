@@ -70,6 +70,7 @@ jobs:
       - image: circleci/ruby:2.4-node
     steps:
       - checkout
+      - run: sleep 50
       - run: echo "Hello World"
   fe_chromatic:
     docker:
@@ -94,6 +95,7 @@ jobs:
       - image: circleci/ruby:2.4-node
     steps:
       - checkout
+      - run: sleep 50
       - run: echo "Hello World"
   be_test:
     docker:
@@ -133,6 +135,7 @@ jobs:
       - image: circleci/ruby:2.4-node
     steps:
       - checkout
+      - run: sleep 50
       - run: echo "Hello World"
   nd_on_ci_data_populator:
     docker:
