@@ -121,6 +121,8 @@ jobs:
     steps:
       - checkout
       - run: echo "Hello World"
+      - run: docker ps
+      - fail_fast
   fe_lint:
     docker:
       - image: circleci/ruby:2.4-node
