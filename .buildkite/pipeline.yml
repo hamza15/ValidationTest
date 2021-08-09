@@ -1,0 +1,6 @@
+agents:
+  os: "macOS"
+
+steps:
+  - command: echo "Hello!"
+  - command: sw_vers
