@@ -1,16 +1,3 @@
-version: "2.1"
-
-commands:
-  fail_fast:
-    steps:
-      - run:
-          name: 'Fail Fast'
-          when: on_fail
-          command: |
-            echo "Canceling workflow as a step resulted in failure"
-            curl -X POST --header "Content-Type: application/json" "https://circleci.com/api/v2/workflow/${CIRCLE_WORKFLOW_ID}/cancel?circle-token=${CIRCLE_TOKEN}"
-
-
 jobs:
   helm_test:
     docker:
@@ -121,16 +108,12 @@ jobs:
     steps:
       - checkout
       - run: echo "Hello World"
-      - run: docker ps
-      - fail_fast
   fe_lint:
     docker:
       - image: circleci/ruby:2.4-node
     steps:
       - checkout
       - run: echo "Hello World"
-      - run: docker ps
-      - fail_fast
   be_test_uWSGI_startup:
     docker:
       - image: circleci/ruby:2.4-node
@@ -150,6 +133,7 @@ jobs:
       - checkout
       - run: echo "Hello World"
 workflows:
+  version: 2
   build_and_test:
     jobs:
       - helm_test
