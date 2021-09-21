@@ -1,4 +1,4 @@
-version: "2.1"
+version: 2.1
 
 orbs:
     angular-orb-training: hamza-runner-ns/angular-orb-training@1.0.0
