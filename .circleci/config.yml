@@ -1,7 +1,7 @@
 version: "2.1"
 
 orbs:
-    angular-orb-training: hamza-runner-ns/angular-orb-training@1.0.0
+    utility-orb: hamza-runner-ns/utility-orb@0.0.1
 
 
 jobs:
@@ -11,8 +11,7 @@ jobs:
     steps:
       - checkout
       - run: echo "Hello World"
-      - angular-orb-training/install-python:
-          from-file: requirements.txt
+      - utility-orb: greet
 
 
   
