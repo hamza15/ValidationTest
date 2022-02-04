@@ -1,7 +1,7 @@
 version: "2.1"
 
 orbs:
-    pulling-orb: hamza-runner-ns/pulling-orb@0.0.1
+    pulling-orb: hamza-runner-ns/pulling-orb@0.0.2
 
 jobs:
   orb_test:
