@@ -1,7 +1,7 @@
 version: "2.1"
 
 orbs:
-    pulling-orb: hamza-runner-ns/pulling-orb@0.0.3
+    internal: hamza-runner-ns/internal-test@0.0.1
 
 jobs:
   orb_test:
@@ -9,7 +9,7 @@ jobs:
       - image: cimg/python:3.9.7
     steps:
       - checkout
-      - pulling-orb/greet
+      - internal/greet
 
 
 
